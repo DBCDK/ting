@@ -196,3 +196,7 @@ function ting_ding_entity_fields() {
     ),
   );
 }
+
+function ting_update_7001() {
+  module_enable(array('ting_client',));
+}
