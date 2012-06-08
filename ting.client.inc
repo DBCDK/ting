@@ -173,7 +173,7 @@ function ting_do_search($query, $page = 1, $results_per_page = 10, $options = ar
 
 
 //pjo testing @TODO this should be set elsewhere
-$request->setObjectFormat('bibliotekdkWorkDisplay');
+//$request->setObjectFormat('bibliotekdkWorkDisplay');
 
 
   $request->setNumFacets((isset($options['numFacets'])) ? $options['numFacets'] : ((sizeof($request->getFacets()) == 0) ? 0 : 10));
