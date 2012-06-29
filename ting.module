@@ -131,8 +131,44 @@ function ting_menu() {
     'access arguments' => array('administer ting settings'),
     'file' => 'ting.admin.inc'
   );
+  
+    //PJO TESTING
+  $items['admin/config/ting/search_client'] = array(
+    'title' => 'Search client configuration',
+    'description' => 'Configure search settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments'=> array('ting_search_client_admin_form'),
+    'access arguments' => array('administer ting settings'),
+    // 'type' => MENU_LOCAL_ACTION,
+    //'file' => 'ting.admin.inc',
+  );
 
   return $items;
+}
+
+// PJO TESTING
+function ting_search_client_admin_form($form_state) {
+  $form = array();
+
+  $form['ting_search_client']['search_client_name'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Search client tab name'),
+    '#default_value' => variable_get('search_client_name', 'HEST'),
+  );
+
+  $form['#submit'] = array('ting_search_client_admin_form_submit');
+
+  $form['buttons']['save'] = array(
+    '#type' => 'submit',
+    '#value' => t('Save changes'),
+  );
+
+  return $form;
+}
+
+function ting_search_client_admin_form_submit($form, $form_state) {
+  variable_set('search_client_name', $form_state['values']['search_client_name']);
+  drupal_set_message(t('The changes has been saved'));
 }
 
 /**
