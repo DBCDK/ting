@@ -77,7 +77,7 @@ function ting_menu() {
     'file path' => drupal_get_path('module', 'system'),
   );
 
-  $items['admin/config/ting/settings'] = array(
+/*  $items['admin/config/ting/settings'] = array(
     'title' => 'Ting',
     'description' => 'Manage Ting integration settings.',
     'weight' => -20,
@@ -85,7 +85,7 @@ function ting_menu() {
     'page arguments' => array('ting_admin_ting_settings'),
     'access arguments' => array('administer ting settings'),
     'file' => 'ting.admin.inc'
-  );
+  );*/
 
   $items['admin/config/ting/ranking'] = array(
     'title' => 'Search result ranking',
@@ -213,7 +213,7 @@ function ting_menu_alter(&$items) {
 /**
  * Implements hook_ding_install_tasks().
  */
-function ting_ding_install_tasks() {
+/*function ting_ding_install_tasks() {
   module_load_include('inc', 'ting', 'ting.admin');
   return array(
     'ting_admin_ting_settings' => array(
@@ -222,7 +222,7 @@ function ting_ding_install_tasks() {
       'file' => drupal_get_path('module', 'ting') . '/ting.admin.inc',
     ),
   );
-}
+}*/
 
 /**
  * Implements hook_permission().
