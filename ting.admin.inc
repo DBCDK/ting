@@ -10,7 +10,9 @@
  * @ingroup forms
  * @see system_settings_form()
  */
-function ting_admin_ting_settings($form_state) {
+/* pjo this form has been moved to ting-client module (@see ting_client.admin.inc
+
+  function ting_admin_ting_settings($form_state) {
   form_load_include($form_state, 'inc', 'ting', 'ting.admin');
   $form = array();
 
@@ -110,7 +112,7 @@ function ting_admin_ting_settings($form_state) {
   );
 
   return system_settings_form($form);
-}
+}*/
 
 /**
  * Form builder; Configure custom search result ranking for this site.
